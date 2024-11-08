@@ -19,13 +19,14 @@ body{
 }
 
 .home{
-  background-color: white;
+  background-color: rgba(215, 255, 36, 0.822);
   width: 85%;
-  margin: 15vh auto;
+  margin: 13vh auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   animation: popUp ease 1s;
+  padding-bottom: 10vh;
 }
 
 .nav a {
@@ -39,7 +40,7 @@ body{
 
 .nav a:hover {
   color: #c3d100;
-  animation: fadein ease 0.5s;
+  animation: fadein ease-in-out 0.5s;
 }
 
 @keyframes fadein {
@@ -67,7 +68,7 @@ body{
   font-style: normal;
   font-size: 70px;
   text-align: center;
-  margin-top: 4em;
+  margin-top: 2em;
   animation: popUp ease 1s;
 }
 
@@ -78,4 +79,122 @@ body{
   to {
     transform: translateY(0px);
   }
+}
+
+.platos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30vh, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 2em;
+  animation: popUp ease 1s;
+}
+
+@media screen and (max-width: 768px) {
+  .platos{
+    grid-template-columns: 1fr;
+  }
+}
+
+.plato{
+  background-color: #f3ff4e;
+  width: 80%;
+  margin: 10px;
+  text-align: center;
+  box-shadow: #ff2323 0 0 10px;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.plato:hover{
+  transform: scale(1.1);
+}
+
+.plato h2 {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.plato img{
+  width: 20vh;
+  height: 20vh;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.plato p{
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  font-style: normal;
+}
+
+.title {
+  font-family: "Lobster", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  font-style: normal;
+}
+.subtitle {
+  margin-left: 30px;
+  font-family: "Lobster", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.reserva{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reserva.show{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1fr));
+  background-color: #f3ff4e;
+  justify-self: center;
+  width: 80%;
+  margin: 10px;
+  text-align: center;
+  box-shadow: #ff2323 0 0 10px;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 2em;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.titulo-reserva{
+  font-family: "Pacifico", cursive;
+  font-size: 35px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form input{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  font-style: normal;
+}
+
+.form button{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
 }
