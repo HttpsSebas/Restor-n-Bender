@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "./nav";
 import Reserva from "./reserva";
+import Opiniones from "./opiniones";
 import asado from "../files/asado.jpg";
 import napo from "../files/napo.jpg";
 import empanadas from "../files/empanadas.webp";
@@ -63,6 +64,7 @@ function Home() {
         </div>
       </div>
       <Reserva />
+      <Opiniones />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-body{
+.app {
   background-image: url("../src/files/fondo.avif");
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,8 +18,8 @@ body{
   z-index: 1000;
 }
 
-.home{
-  background-color: rgba(215, 255, 36, 0.822);
+.home {
+  background-color: rgba(255, 36, 36, 0.822);
   width: 85%;
   margin: 13vh auto;
   display: flex;
@@ -62,8 +62,9 @@ body{
   margin-right: 20px;
 }
 
-.name{
+.name {
   font-family: "Pacifico", cursive;
+  color: #c3d100;
   font-weight: 400;
   font-style: normal;
   font-size: 70px;
@@ -91,41 +92,43 @@ body{
 }
 
 @media screen and (max-width: 768px) {
-  .platos{
+  .platos {
     grid-template-columns: 1fr;
   }
 }
 
-.plato{
-  background-color: #f3ff4e;
+.plato {
+  background-color: #ff4242;
   width: 80%;
   margin: 10px;
   text-align: center;
-  box-shadow: #ff2323 0 0 10px;
+  box-shadow: #fbff12 0 0 10px;
   padding: 10px;
   transition: transform 0.3s ease-in-out;
 }
 
-.plato:hover{
+.plato:hover {
   transform: scale(1.1);
 }
 
 .plato h2 {
   font-family: "Playfair Display SC", serif;
+  color: #c3d100;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
 }
 
-.plato img{
+.plato img {
   width: 20vh;
   height: 20vh;
   object-fit: cover;
   border-radius: 5%;
 }
 
-.plato p{
+.plato p {
   font-family: "Poppins", sans-serif;
+  color: #c5d11b;
   font-weight: 300;
   font-size: 15px;
   font-style: normal;
@@ -133,6 +136,7 @@ body{
 
 .title {
   font-family: "Lobster", sans-serif;
+  color: #c3d100;
   font-size: 30px;
   font-weight: 400;
   font-style: normal;
@@ -140,21 +144,22 @@ body{
 .subtitle {
   margin-left: 30px;
   font-family: "Lobster", sans-serif;
+  color: #c3d100;
   font-size: 30px;
   font-weight: 400;
   font-style: normal;
 }
 
-.reserva{
+.reserva {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.reserva.show{
+.reserva.show {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(1fr));
-  background-color: #f3ff4e;
+  background-color: rgba(255, 36, 36, 0.822);
   justify-self: center;
   width: 80%;
   margin: 10px;
@@ -167,21 +172,22 @@ body{
   transform: translateY(0);
 }
 
-.titulo-reserva{
+.titulo-reserva {
   font-family: "Pacifico", cursive;
+  color: #c3d100;
   font-size: 35px;
   font-weight: 500;
   font-style: normal;
 }
 
-.form{
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
 }
 
-.form input{
+.form input {
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -192,9 +198,71 @@ body{
   font-style: normal;
 }
 
-.form button{
+.form button {
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
   border: none;
+}
+
+.opiniones-carousel {
+  position: relative;
+  margin: auto;
+  background-color: #ff2323af; /* Fondo rojo con transparencia */
+  text-align: center;
+  padding: 20px; /* Espaciado interno */
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden; /* Oculta el contenido fuera del área visible */
+}
+
+.carousel-inner {
+  display: flex; /* Usa flexbox para facilitar la alineación */
+  transition: transform 0.5s ease-in-out; /* Transición suave */
+}
+
+.carousel-item {
+  min-width: 100%; /* Cada item ocupa todo el ancho del carrusel */
+}
+
+.carousel.next .carousel-inner {
+  transform: translateX(-100%); /* Desliza hacia la derecha */
+}
+
+.carousel.prev .carousel-inner {
+  transform: translateX(100%); /* Desliza hacia la izquierda */
+}
+
+.carousel-item h4 {
+  font-family: "Playfair Display SC", serif;
+  color: #c3d100;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.carousel-item p {
+  font-family: "Poppins", sans-serif;
+  color: #c3d100;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgb(188, 255, 63);
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+}
+.prev-btn {
+  left: 10px; /* Posición del botón izquierdo */
+}
+.next-btn {
+  right: 10px; /* Posición del botón derecho */
 }
