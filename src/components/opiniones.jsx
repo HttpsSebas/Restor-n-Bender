@@ -28,15 +28,12 @@ function Opiniones() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [slideDirection, setSlideDirection] = useState("");
 
   const nextSlide = () => {
-    setSlideDirection("next");
     setCurrentIndex((prevIndex) => (prevIndex + 1) % opiniones.length);
   };
 
   const prevSlide = () => {
-    setSlideDirection("prev");
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + opiniones.length) % opiniones.length
     );
@@ -44,18 +41,22 @@ function Opiniones() {
 
   return (
     <div className="opiniones-carousel">
-            <h2>Opiniones de Clientes</h2>
-            <div className={`carousel ${slideDirection}`}>
-                <div className="carousel-inner">
-                    <div className="carousel-item">
-                        <p>"{opiniones[currentIndex].opinion}"</p>
-                        <h4>- {opiniones[currentIndex].nombre}</h4>
-                    </div>
-                </div>
-            </div>
-            <button className="prev-btn" onClick={prevSlide}>❮</button>
-            <button className="next-btn" onClick={nextSlide}>❯</button>
+      <h2>Opiniones de Clientes</h2>
+      <div className="carousel">
+        <div className="carousel-inner">
+          <div className="carousel-item">
+            <p>"{opiniones[currentIndex].opinion}"</p>
+            <h4>- {opiniones[currentIndex].nombre}</h4>
+          </div>
         </div>
+      </div>
+      <button className="prev-btn" onClick={prevSlide}>
+        ❮
+      </button>
+      <button className="next-btn" onClick={nextSlide}>
+        ❯
+      </button>
+    </div>
   );
 }
 
